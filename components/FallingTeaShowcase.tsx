@@ -9,15 +9,15 @@ export default function FallingTeaShowcase() {
       <div className="about-showcase-container">
         <motion.div
           className="about-showcase-art-wrap"
-          initial={{ opacity: 0, y: 25, scale: 0.98 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
           <Image
-            src="/assets/about-sec-basket-stage.png"
-            width={1200}
-            height={688}
+            src="/assets/about-falling-tea-stage-clean.jpg"
+            width={1920}
+            height={800}
             alt="Thúng tre hội tụ thức trà và linh vật Mộc Phiêu"
             priority
             className="about-showcase-main-img"
