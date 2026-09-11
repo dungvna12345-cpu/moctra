@@ -15,15 +15,15 @@ export default function FallingTeaShowcase() {
   const smoothX = useSpring(mouseX, springConfig);
   const smoothY = useSpring(mouseY, springConfig);
 
-  // Parallax layers with different depth factors
-  const layer1X = useTransform(smoothX, [-0.5, 0.5], [-24, 24]);
-  const layer1Y = useTransform(smoothY, [-0.5, 0.5], [-20, 20]);
+  // Parallax layers
+  const layer1X = useTransform(smoothX, [-0.5, 0.5], [-20, 20]);
+  const layer1Y = useTransform(smoothY, [-0.5, 0.5], [-16, 16]);
 
-  const layer2X = useTransform(smoothX, [-0.5, 0.5], [20, -20]);
-  const layer2Y = useTransform(smoothY, [-0.5, 0.5], [18, -18]);
+  const layer2X = useTransform(smoothX, [-0.5, 0.5], [16, -16]);
+  const layer2Y = useTransform(smoothY, [-0.5, 0.5], [14, -14]);
 
-  const layer3X = useTransform(smoothX, [-0.5, 0.5], [-14, 14]);
-  const layer3Y = useTransform(smoothY, [-0.5, 0.5], [-12, 12]);
+  const layer3X = useTransform(smoothX, [-0.5, 0.5], [-12, 12]);
+  const layer3Y = useTransform(smoothY, [-0.5, 0.5], [-10, 10]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!containerRef.current) return;
@@ -56,18 +56,18 @@ export default function FallingTeaShowcase() {
         <motion.div
           className="falling-item item-mut-dua-top-left"
           style={{ x: layer1X, y: layer1Y }}
-          initial={{ opacity: 0, y: -90, rotate: -10 }}
+          initial={{ opacity: 0, y: -70, rotate: -8 }}
           whileInView={{ opacity: 1, y: 0, rotate: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
         >
           <motion.div
             animate={{
-              y: [-8, 8, -8],
-              rotate: [-2.5, 2.5, -2.5],
+              y: [-7, 7, -7],
+              rotate: [-2, 2, -2],
             }}
             transition={{
-              duration: 5,
+              duration: 4.8,
               repeat: Infinity,
               ease: 'easeInOut',
             }}
@@ -86,27 +86,27 @@ export default function FallingTeaShowcase() {
         <motion.div
           className="falling-item item-tao-do-top-center"
           style={{ x: layer2X, y: layer2Y }}
-          initial={{ opacity: 0, y: -110, rotate: 6 }}
+          initial={{ opacity: 0, y: -90, rotate: 4 }}
           whileInView={{ opacity: 1, y: 0, rotate: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 1.1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
         >
           <motion.div
             animate={{
-              y: [7, -9, 7],
+              y: [6, -8, 6],
               rotate: [2, -2, 2],
             }}
             transition={{
-              duration: 5.6,
+              duration: 5.4,
               repeat: Infinity,
               ease: 'easeInOut',
-              delay: 0.4,
+              delay: 0.3,
             }}
           >
             <Image
               src="/assets/menu/mut-man.png"
-              width={190}
-              height={145}
+              width={180}
+              height={140}
               alt="Mứt táo đỏ đậm vị"
               className="falling-dish-img"
             />
@@ -117,27 +117,27 @@ export default function FallingTeaShowcase() {
         <motion.div
           className="falling-item item-dai-son-khe-top-right"
           style={{ x: layer1X, y: layer1Y }}
-          initial={{ opacity: 0, y: -95, rotate: 12 }}
+          initial={{ opacity: 0, y: -80, rotate: 10 }}
           whileInView={{ opacity: 1, y: 0, rotate: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 1.05, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.95, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
         >
           <motion.div
             animate={{
-              y: [-10, 6, -10],
-              rotate: [-3, 2, -3],
+              y: [-8, 6, -8],
+              rotate: [-2.5, 2, -2.5],
             }}
             transition={{
-              duration: 5.2,
+              duration: 5,
               repeat: Infinity,
               ease: 'easeInOut',
-              delay: 0.8,
+              delay: 0.6,
             }}
           >
             <Image
               src="/assets/menu/dai-son-khe.png"
-              width={210}
-              height={160}
+              width={200}
+              height={155}
               alt="Trà khô Đại Sơn Khê"
               className="falling-dish-img"
             />
@@ -148,18 +148,18 @@ export default function FallingTeaShowcase() {
         <motion.div
           className="falling-item item-hong-nu-nhi-bot-left"
           style={{ x: layer3X, y: layer3Y }}
-          initial={{ opacity: 0, y: -70, rotate: -8 }}
+          initial={{ opacity: 0, y: -60, rotate: -6 }}
           whileInView={{ opacity: 1, y: 0, rotate: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.95, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.85, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
         >
           <motion.div
             animate={{
-              y: [6, -8, 6],
-              rotate: [2.5, -2.5, 2.5],
+              y: [5, -7, 5],
+              rotate: [2, -2, 2],
             }}
             transition={{
-              duration: 4.8,
+              duration: 4.6,
               repeat: Infinity,
               ease: 'easeInOut',
               delay: 0.2,
@@ -167,8 +167,8 @@ export default function FallingTeaShowcase() {
           >
             <Image
               src="/assets/menu/hong-nu-nhi.png"
-              width={200}
-              height={155}
+              width={190}
+              height={145}
               alt="Búp trà vàng Hồng Nữ Nhi"
               className="falling-dish-img"
             />
@@ -176,14 +176,14 @@ export default function FallingTeaShowcase() {
         </motion.div>
 
         {/* =========================================================
-            CENTER BASKET (Thúng tre lớn hội tụ nguyên liệu)
+            CENTER BASKET (Thúng tre lớn trong suốt)
             ========================================================= */}
         <motion.div
           className="falling-center-basket"
-          initial={{ opacity: 0, scale: 0.92, y: 35 }}
+          initial={{ opacity: 0, scale: 0.94, y: 30 }}
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
         >
           <motion.div
             animate={{
@@ -197,9 +197,9 @@ export default function FallingTeaShowcase() {
             className="basket-img-wrap"
           >
             <Image
-              src="/assets/about_basket_isolated.png"
-              width={560}
-              height={450}
+              src="/assets/anim-basket.png"
+              width={510}
+              height={370}
               alt="Thúng tre Mộc Phiêu hội tụ thức trà"
               priority
               className="main-basket-img"
@@ -212,26 +212,26 @@ export default function FallingTeaShowcase() {
             ========================================================= */}
         <motion.div
           className="falling-mascot-wrap"
-          initial={{ opacity: 0, x: 50, scale: 0.9 }}
+          initial={{ opacity: 0, x: 40, scale: 0.92 }}
           whileInView={{ opacity: 1, x: 0, scale: 1 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.9, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.85, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
         >
           <motion.div
             animate={{
-              y: [-6, 6, -6],
+              y: [-5, 5, -5],
               rotate: [-1.5, 1.5, -1.5],
             }}
             transition={{
-              duration: 4.2,
+              duration: 4,
               repeat: Infinity,
               ease: 'easeInOut',
             }}
           >
             <Image
               src="/assets/about_mascot_isolated.png"
-              width={280}
-              height={330}
+              width={260}
+              height={300}
               alt="Linh vật Mộc Phiêu bưng khay trà"
               className="mascot-img"
             />
