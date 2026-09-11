@@ -1,12 +1,16 @@
 'use client';
 
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Footer from '@/components/Footer';
 import Reveal from '@/components/Reveal';
+import AccountModal from '@/components/AccountModal';
 
 export default function HomePage() {
+  const [accountOpen, setAccountOpen] = useState(false);
+
   return (
     <main className="home-page">
       {/* 1. Hero Section with Full Uncropped Banner */}
@@ -33,6 +37,31 @@ export default function HomePage() {
         <span>Gác lại ưu phiền</span>
         <i className="clouds">☁ ☁</i>
       </div>
+
+      {/* 2b. Thưởng thức vị trà thanh mát, đậm đà */}
+      <section className="home-intro-cta-section">
+        <Reveal>
+          <div className="home-intro-cta-content">
+            <h2 className="home-intro-cta-title">
+              thưởng thức vị trà
+              <br />
+              thanh mát, đậm đà
+            </h2>
+            <div className="home-intro-cta-actions">
+              <Link href="/menu" className="btn-cta-outline">
+                KHÁM PHÁ TRÀ
+              </Link>
+              <button
+                type="button"
+                onClick={() => setAccountOpen(true)}
+                className="btn-cta-outline"
+              >
+                ĐĂNG KÝ HỘ TỊCH
+              </button>
+            </div>
+          </div>
+        </Reveal>
+      </section>
 
       {/* 3. Set Thưởng Trà Section */}
       <section className="tea-set-section">
@@ -238,6 +267,8 @@ export default function HomePage() {
 
       {/* 4. Footer */}
       <Footer />
+
+      <AccountModal isOpen={accountOpen} onClose={() => setAccountOpen(false)} />
     </main>
   );
 }
