@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 export default function FallingTeaShowcase() {
   return (
-    <section className="about-showcase-stage" aria-label="Khung nghệ thuật thức trà Mộc Phiêu">
+    <section className="about-showcase-stage" aria-label="Thức trà Mộc Phiêu hội tụ">
       <div className="about-showcase-container">
         <motion.div
           className="about-showcase-art-wrap"
@@ -15,9 +15,9 @@ export default function FallingTeaShowcase() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
           <Image
-            src="/assets/about-falling-tea-stage-clean.jpg"
+            src="/assets/about-falling-tea-stage-pristine.jpg"
             width={1920}
-            height={800}
+            height={1200}
             alt="Thúng tre hội tụ thức trà và linh vật Mộc Phiêu"
             priority
             className="about-showcase-main-img"
