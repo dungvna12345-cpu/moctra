@@ -2037,41 +2037,6 @@ img {
   filter: drop-shadow(0 12px 32px rgba(92, 125, 53, 0.1));
 }
 
-.floating-micro-dish {
-  position: absolute;
-  pointer-events: none;
-  z-index: 5;
-}
-
-.floating-micro-dish.dish-1 {
-  top: 8%;
-  left: 8%;
-}
-
-.floating-micro-dish.dish-2 {
-  top: 4%;
-  left: 44%;
-}
-
-.floating-micro-dish.dish-3 {
-  top: 10%;
-  right: 12%;
-}
-
-.micro-dish-img {
-  width: auto;
-  height: auto;
-  max-width: 130px;
-  object-fit: contain;
-  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.22));
-}
-
-@media (max-width: 768px) {
-  .floating-micro-dish {
-    display: none;
-  }
-}
-
 /* 3. Tầm Nhìn, Sứ Mệnh, Giá Trị Narrative Sections */
 .about-narrative-section {
   max-width: 1400px;
